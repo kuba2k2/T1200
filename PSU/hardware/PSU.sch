@@ -33038,20 +33038,6 @@ Replacement power supply unit</text>
 <label x="266.7" y="226.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="VIN"/>
-<wire x1="325.12" y1="220.98" x2="322.58" y2="220.98" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="322.58" y1="220.98" x2="307.34" y2="220.98" width="0.1524" layer="91"/>
-<wire x1="307.34" y1="220.98" x2="307.34" y2="218.44" width="0.1524" layer="91"/>
-<wire x1="327.66" y1="228.6" x2="322.58" y2="228.6" width="0.1524" layer="91"/>
-<wire x1="322.58" y1="228.6" x2="322.58" y2="220.98" width="0.1524" layer="91"/>
-<junction x="322.58" y="220.98"/>
-<wire x1="307.34" y1="220.98" x2="304.8" y2="220.98" width="0.1524" layer="91"/>
-<junction x="307.34" y="220.98"/>
-<label x="304.8" y="220.98" size="1.778" layer="95"/>
-<pinref part="L2" gate="G$1" pin="1"/>
-</segment>
-<segment>
 <pinref part="Q2" gate="G$1" pin="S"/>
 <wire x1="281.94" y1="193.04" x2="281.94" y2="195.58" width="0.1524" layer="91"/>
 <label x="281.94" y="195.58" size="1.778" layer="95"/>
@@ -33064,11 +33050,6 @@ Replacement power supply unit</text>
 </segment>
 </net>
 <net name="SEC_CTRL" class="1">
-<segment>
-<pinref part="U2" gate="G$1" pin="EN"/>
-<wire x1="325.12" y1="218.44" x2="312.42" y2="218.44" width="0.1524" layer="91"/>
-<label x="312.42" y="218.44" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="264.16" y1="195.58" x2="264.16" y2="208.28" width="0.1524" layer="91"/>
@@ -33172,17 +33153,17 @@ Replacement power supply unit</text>
 <net name="SEC_VIN_SW" class="2">
 <segment>
 <pinref part="U8" gate="G$1" pin="VCC"/>
-<wire x1="292.1" y1="180.34" x2="292.1" y2="170.18" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="170.18" x2="292.1" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="297.18" y1="180.34" x2="297.18" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="297.18" y1="170.18" x2="297.18" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="322.58" y1="109.22" x2="304.8" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="304.8" y1="109.22" x2="304.8" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="R17" gate="G$1" pin="1"/>
 <wire x1="307.34" y1="114.3" x2="304.8" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="114.3" x2="304.8" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="297.18" y1="114.3" x2="304.8" y2="114.3" width="0.1524" layer="91"/>
 <junction x="304.8" y="114.3"/>
 <pinref part="Q2" gate="G$1" pin="D"/>
 <wire x1="281.94" y1="182.88" x2="281.94" y2="180.34" width="0.1524" layer="91"/>
-<wire x1="281.94" y1="180.34" x2="292.1" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="180.34" x2="297.18" y2="180.34" width="0.1524" layer="91"/>
 <pinref part="C9" gate="G$1" pin="+"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="307.34" y1="170.18" x2="304.8" y2="170.18" width="0.1524" layer="91"/>
@@ -33191,9 +33172,25 @@ Replacement power supply unit</text>
 <wire x1="304.8" y1="165.1" x2="304.8" y2="170.18" width="0.1524" layer="91"/>
 <junction x="304.8" y="165.1"/>
 <wire x1="304.8" y1="165.1" x2="304.8" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="304.8" y1="170.18" x2="292.1" y2="170.18" width="0.1524" layer="91"/>
-<junction x="292.1" y="170.18"/>
+<wire x1="304.8" y1="170.18" x2="297.18" y2="170.18" width="0.1524" layer="91"/>
+<junction x="297.18" y="170.18"/>
 <junction x="304.8" y="170.18"/>
+<junction x="297.18" y="180.34"/>
+<pinref part="U2" gate="G$1" pin="VIN"/>
+<wire x1="325.12" y1="220.98" x2="322.58" y2="220.98" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="322.58" y1="220.98" x2="307.34" y2="220.98" width="0.1524" layer="91"/>
+<wire x1="307.34" y1="220.98" x2="307.34" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="228.6" x2="322.58" y2="228.6" width="0.1524" layer="91"/>
+<wire x1="322.58" y1="228.6" x2="322.58" y2="220.98" width="0.1524" layer="91"/>
+<junction x="322.58" y="220.98"/>
+<junction x="307.34" y="220.98"/>
+<pinref part="L2" gate="G$1" pin="1"/>
+<pinref part="U2" gate="G$1" pin="EN"/>
+<wire x1="325.12" y1="218.44" x2="322.58" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="322.58" y1="218.44" x2="322.58" y2="220.98" width="0.1524" layer="91"/>
+<wire x1="297.18" y1="180.34" x2="297.18" y2="220.98" width="0.1524" layer="91"/>
+<wire x1="297.18" y1="220.98" x2="307.34" y2="220.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="-22V_SWC" class="2">

@@ -31155,7 +31155,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0411/15" package3d_urn="urn:adsk.eagle:package:23568/2" value="0.1"/>
 <part name="R19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0411/15" package3d_urn="urn:adsk.eagle:package:23568/2" value="0.1"/>
 <part name="VCC18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCINT" device=""/>
-<part name="VCC19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 <part name="VCC20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCCIO" device=""/>
 <part name="TP13" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP14" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
@@ -32609,7 +32608,7 @@ Replacement power supply unit</text>
 <label x="170.18" y="180.34" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="CHG_CTRL" class="1">
+<net name="^CHG_CTRL" class="1">
 <segment>
 <pinref part="U7" gate="NC1" pin="EN"/>
 <wire x1="147.32" y1="121.92" x2="134.62" y2="121.92" width="0.1524" layer="91"/>
@@ -32893,13 +32892,6 @@ Replacement power supply unit</text>
 <pinref part="VR1" gate="G$1" pin="E"/>
 <pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="200.66" y1="170.18" x2="200.66" y2="172.72" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="PRI_CTRL" class="1">
-<segment>
-<pinref part="U1" gate="NC1" pin="EN"/>
-<wire x1="195.58" y1="228.6" x2="185.42" y2="228.6" width="0.1524" layer="91"/>
-<label x="185.42" y="228.6" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FULL_VAL" class="1">
@@ -33607,6 +33599,13 @@ Replacement power supply unit</text>
 <wire x1="127" y1="25.4" x2="126.8476" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="^PRI_CTRL" class="1">
+<segment>
+<pinref part="U1" gate="NC1" pin="EN"/>
+<wire x1="195.58" y1="228.6" x2="185.42" y2="228.6" width="0.1524" layer="91"/>
+<label x="185.42" y="228.6" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -34310,9 +34309,9 @@ Replacement power supply unit</text>
 <instance part="VCC18" gate="G$1" x="243.84" y="162.56" smashed="yes">
 <attribute name="VALUE" x="241.3" y="160.02" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="U10" gate="E" x="274.32" y="114.3" smashed="yes">
-<attribute name="NAME" x="276.86" y="117.475" size="1.778" layer="95"/>
-<attribute name="VALUE" x="276.86" y="109.22" size="1.778" layer="96"/>
+<instance part="U10" gate="E" x="228.6" y="226.06" smashed="yes">
+<attribute name="NAME" x="231.14" y="229.235" size="1.778" layer="95"/>
+<attribute name="VALUE" x="231.14" y="220.98" size="1.778" layer="96"/>
 </instance>
 <instance part="U10" gate="C" x="233.68" y="111.76" smashed="yes">
 <attribute name="NAME" x="236.22" y="114.935" size="1.778" layer="95"/>
@@ -34321,9 +34320,6 @@ Replacement power supply unit</text>
 <instance part="U10" gate="D" x="274.32" y="101.6" smashed="yes">
 <attribute name="NAME" x="276.86" y="104.775" size="1.778" layer="95"/>
 <attribute name="VALUE" x="276.86" y="96.52" size="1.778" layer="96"/>
-</instance>
-<instance part="VCC19" gate="G$1" x="261.62" y="119.38" smashed="yes">
-<attribute name="VALUE" x="259.08" y="116.84" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="VCC20" gate="G$1" x="261.62" y="106.68" smashed="yes">
 <attribute name="VALUE" x="259.08" y="104.14" size="1.778" layer="96" rot="R90"/>
@@ -34699,12 +34695,6 @@ Replacement power supply unit</text>
 <pinref part="U12" gate="P" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="U10" gate="E" pin="I"/>
-<wire x1="264.16" y1="114.3" x2="261.62" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="261.62" y1="114.3" x2="261.62" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="VCC19" gate="G$1" pin="VCCIO"/>
-</segment>
-<segment>
 <pinref part="U10" gate="D" pin="I"/>
 <wire x1="264.16" y1="101.6" x2="261.62" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="261.62" y1="101.6" x2="261.62" y2="104.14" width="0.1524" layer="91"/>
@@ -34743,21 +34733,11 @@ Replacement power supply unit</text>
 <pinref part="VCC18" gate="G$1" pin="VCCINT"/>
 </segment>
 </net>
-<net name="PRI_CTRL" class="1">
+<net name="^PRI_CTRL" class="1">
 <segment>
-<label x="177.8" y="218.44" size="1.778" layer="95"/>
-<pinref part="U14" gate="D" pin="I0"/>
-<wire x1="190.5" y1="218.44" x2="177.8" y2="218.44" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U13" gate="G$1" pin="PC4/TIM1_CH4/CLK_CCO"/>
-<wire x1="116.84" y1="220.98" x2="129.54" y2="220.98" width="0.1524" layer="91"/>
-<label x="116.84" y="220.98" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="RP1" gate="G$1" pin="2"/>
-<wire x1="337.82" y1="241.3" x2="355.6" y2="241.3" width="0.1524" layer="91"/>
-<label x="337.82" y="241.3" size="1.778" layer="95"/>
+<pinref part="U10" gate="E" pin="O"/>
+<wire x1="238.76" y1="226.06" x2="251.46" y2="226.06" width="0.1524" layer="91"/>
+<label x="238.76" y="226.06" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SEC_CTRL" class="1">
@@ -34955,7 +34935,7 @@ Replacement power supply unit</text>
 <label x="326.39" y="123.19" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CHG_CTRL" class="1">
+<net name="^CHG_CTRL" class="1">
 <segment>
 <pinref part="RP1" gate="G$1" pin="1"/>
 <wire x1="355.6" y1="243.84" x2="337.82" y2="243.84" width="0.1524" layer="91"/>
@@ -35809,6 +35789,28 @@ Replacement power supply unit</text>
 <pinref part="TP17" gate="G$1" pin="TP"/>
 <wire x1="312.42" y1="121.92" x2="312.42" y2="124.46" width="0.1524" layer="91"/>
 <label x="311.15" y="123.19" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PRI_CTRL" class="1">
+<segment>
+<label x="177.8" y="218.44" size="1.778" layer="95"/>
+<pinref part="U14" gate="D" pin="I0"/>
+<wire x1="190.5" y1="218.44" x2="177.8" y2="218.44" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U10" gate="E" pin="I"/>
+<wire x1="218.44" y1="226.06" x2="205.74" y2="226.06" width="0.1524" layer="91"/>
+<label x="205.74" y="226.06" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U13" gate="G$1" pin="PC4/TIM1_CH4/CLK_CCO"/>
+<wire x1="116.84" y1="220.98" x2="129.54" y2="220.98" width="0.1524" layer="91"/>
+<label x="116.84" y="220.98" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="RP1" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="241.3" x2="355.6" y2="241.3" width="0.1524" layer="91"/>
+<label x="337.82" y="241.3" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

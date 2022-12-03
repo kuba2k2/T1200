@@ -31165,6 +31165,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="TP20" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="R32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="0.4"/>
 <part name="TP17" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
+<part name="Q12" library="SparkFun-DiscreteSemi" deviceset="MOSFET_PCH" device="-IRLML2244" value="PMOS-SOT23"/>
 </parts>
 <sheets>
 <sheet>
@@ -32091,6 +32092,10 @@ Replacement power supply unit</text>
 <attribute name="NAME" x="318.5414" y="39.37" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="323.342" y="39.37" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="Q12" gate="G$1" x="78.74" y="33.02" smashed="yes" rot="MR180">
+<attribute name="NAME" x="83.82" y="33.02" size="1.778" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="83.82" y="30.48" size="1.778" layer="96" font="vector" rot="MR180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -32591,21 +32596,14 @@ Replacement power supply unit</text>
 <junction x="358.14" y="50.8"/>
 </segment>
 <segment>
-<pinref part="U6" gate="G$1" pin="VIN"/>
-<wire x1="50.8" y1="127" x2="48.26" y2="127" width="0.1524" layer="91"/>
-<pinref part="C12" gate="G$1" pin="1"/>
-<wire x1="48.26" y1="127" x2="33.02" y2="127" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="134.62" x2="48.26" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="134.62" x2="48.26" y2="127" width="0.1524" layer="91"/>
-<junction x="48.26" y="127"/>
-<wire x1="33.02" y1="127" x2="33.02" y2="124.46" width="0.1524" layer="91"/>
-<label x="33.02" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="L4" gate="G$1" pin="1"/>
-</segment>
-<segment>
 <pinref part="D4" gate="G$1" pin="A"/>
 <wire x1="172.72" y1="180.34" x2="170.18" y2="180.34" width="0.1524" layer="91"/>
 <label x="170.18" y="180.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="Q12" gate="G$1" pin="S"/>
+<wire x1="81.28" y1="38.1" x2="81.28" y2="40.64" width="0.1524" layer="91"/>
+<label x="81.28" y="40.64" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="^CHG_CTRL" class="1">
@@ -33339,9 +33337,9 @@ Replacement power supply unit</text>
 </net>
 <net name="MEM_BACKUP" class="1">
 <segment>
-<pinref part="U6" gate="G$1" pin="EN"/>
-<wire x1="50.8" y1="124.46" x2="35.56" y2="124.46" width="0.1524" layer="91"/>
-<label x="35.56" y="124.46" size="1.778" layer="95"/>
+<wire x1="73.66" y1="35.56" x2="60.96" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="Q12" gate="G$1" pin="G"/>
+<label x="60.96" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MB_SW" class="2">
@@ -33604,6 +33602,28 @@ Replacement power supply unit</text>
 <pinref part="U1" gate="NC1" pin="EN"/>
 <wire x1="195.58" y1="228.6" x2="185.42" y2="228.6" width="0.1524" layer="91"/>
 <label x="185.42" y="228.6" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="VBACKUP_SW" class="2">
+<segment>
+<pinref part="Q12" gate="G$1" pin="D"/>
+<wire x1="81.28" y1="27.94" x2="81.28" y2="22.86" width="0.1524" layer="91"/>
+<label x="81.28" y="22.86" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U6" gate="G$1" pin="VIN"/>
+<wire x1="50.8" y1="127" x2="48.26" y2="127" width="0.1524" layer="91"/>
+<pinref part="C12" gate="G$1" pin="1"/>
+<wire x1="48.26" y1="127" x2="33.02" y2="127" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="134.62" x2="48.26" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="134.62" x2="48.26" y2="127" width="0.1524" layer="91"/>
+<junction x="48.26" y="127"/>
+<wire x1="33.02" y1="127" x2="33.02" y2="124.46" width="0.1524" layer="91"/>
+<label x="33.02" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="L4" gate="G$1" pin="1"/>
+<pinref part="U6" gate="G$1" pin="EN"/>
+<wire x1="50.8" y1="124.46" x2="48.26" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="124.46" x2="48.26" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

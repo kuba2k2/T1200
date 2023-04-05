@@ -31170,6 +31170,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R77" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 <part name="R78" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="Q14" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-MMBT2222AL" value="NPN"/>
+<part name="R80" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R79" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -32017,16 +32021,16 @@ Replacement power supply unit</text>
 <attribute name="NAME" x="310.9214" y="90.17" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="315.722" y="90.17" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="P+22" gate="1" x="81.28" y="73.66" smashed="yes">
-<attribute name="VALUE" x="78.74" y="68.58" size="1.778" layer="96" rot="R90"/>
+<instance part="P+22" gate="1" x="88.9" y="76.2" smashed="yes">
+<attribute name="VALUE" x="86.36" y="71.12" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="Q4" gate="G$1" x="78.74" y="63.5" smashed="yes" rot="MR180">
-<attribute name="NAME" x="83.82" y="63.5" size="1.778" layer="95" font="vector" rot="MR180"/>
-<attribute name="VALUE" x="83.82" y="60.96" size="1.778" layer="96" font="vector" rot="MR180"/>
+<instance part="Q4" gate="G$1" x="86.36" y="63.5" smashed="yes" rot="MR180">
+<attribute name="NAME" x="91.44" y="63.5" size="1.778" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="91.44" y="60.96" size="1.778" layer="96" font="vector" rot="MR180"/>
 </instance>
-<instance part="D12" gate="G$1" x="86.36" y="53.34" smashed="yes">
-<attribute name="NAME" x="84.074" y="55.245" size="1.778" layer="95"/>
-<attribute name="VALUE" x="84.074" y="49.911" size="1.778" layer="96"/>
+<instance part="D12" gate="G$1" x="93.98" y="53.34" smashed="yes">
+<attribute name="NAME" x="91.694" y="55.245" size="1.778" layer="95"/>
+<attribute name="VALUE" x="91.694" y="49.911" size="1.778" layer="96"/>
 </instance>
 <instance part="Q1" gate="G$1" x="152.4" y="231.14" smashed="yes">
 <attribute name="NAME" x="157.48" y="231.14" size="1.778" layer="95" font="vector"/>
@@ -32114,6 +32118,21 @@ Replacement power supply unit</text>
 <instance part="R78" gate="G$1" x="66.04" y="27.94" smashed="yes">
 <attribute name="NAME" x="62.23" y="29.4386" size="1.778" layer="95"/>
 <attribute name="VALUE" x="62.23" y="24.638" size="1.778" layer="96"/>
+</instance>
+<instance part="Q14" gate="G$1" x="76.2" y="58.42" smashed="yes">
+<attribute name="NAME" x="78.74" y="58.42" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="78.74" y="56.134" size="1.778" layer="96" font="vector"/>
+</instance>
+<instance part="R80" gate="G$1" x="66.04" y="58.42" smashed="yes">
+<attribute name="NAME" x="62.23" y="59.9186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="62.23" y="55.118" size="1.778" layer="96"/>
+</instance>
+<instance part="R79" gate="G$1" x="83.82" y="71.12" smashed="yes">
+<attribute name="NAME" x="80.01" y="72.6186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="80.01" y="67.818" size="1.778" layer="96"/>
+</instance>
+<instance part="GND2" gate="1" x="78.74" y="48.26" smashed="yes">
+<attribute name="VALUE" x="76.2" y="45.72" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -32451,6 +32470,11 @@ Replacement power supply unit</text>
 <wire x1="78.74" y1="22.86" x2="78.74" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="Q14" gate="G$1" pin="E"/>
+<wire x1="78.74" y1="53.34" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="+5V_LOGIC" class="3">
 <segment>
@@ -32546,8 +32570,8 @@ Replacement power supply unit</text>
 </segment>
 <segment>
 <pinref part="D12" gate="G$1" pin="C"/>
-<wire x1="88.9" y1="53.34" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
-<label x="91.44" y="53.34" size="1.778" layer="95" xref="yes"/>
+<wire x1="96.52" y1="53.34" x2="99.06" y2="53.34" width="0.1524" layer="91"/>
+<label x="99.06" y="53.34" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="+12V_IO" class="2">
@@ -32801,8 +32825,11 @@ Replacement power supply unit</text>
 </segment>
 <segment>
 <pinref part="Q4" gate="G$1" pin="S"/>
-<wire x1="81.28" y1="68.58" x2="81.28" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="68.58" x2="88.9" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="P+22" gate="1" pin="+5V"/>
+<pinref part="R79" gate="G$1" pin="2"/>
+<junction x="88.9" y="71.12"/>
+<wire x1="88.9" y1="71.12" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VBAT_RAW" class="4">
@@ -33589,17 +33616,18 @@ Replacement power supply unit</text>
 </net>
 <net name="MEM_MAIN" class="1">
 <segment>
-<pinref part="Q4" gate="G$1" pin="G"/>
-<wire x1="73.66" y1="66.04" x2="60.96" y2="66.04" width="0.1524" layer="91"/>
-<label x="60.96" y="66.04" size="1.778" layer="95"/>
+<pinref part="R80" gate="G$1" pin="1"/>
+<wire x1="60.96" y1="58.42" x2="58.42" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="58.42" x2="58.42" y2="63.5" width="0.1524" layer="91"/>
+<label x="58.42" y="63.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+5VMEM_D" class="2">
 <segment>
 <pinref part="Q4" gate="G$1" pin="D"/>
-<wire x1="81.28" y1="58.42" x2="81.28" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="58.42" x2="88.9" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="D12" gate="G$1" pin="A"/>
-<wire x1="81.28" y1="53.34" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="53.34" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="HDD12_EN" class="1">
@@ -33664,6 +33692,24 @@ Replacement power supply unit</text>
 <wire x1="60.96" y1="27.94" x2="58.42" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="27.94" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
 <label x="58.42" y="33.02" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="+5VMEM_B" class="1">
+<segment>
+<pinref part="Q14" gate="G$1" pin="B"/>
+<wire x1="73.66" y1="58.42" x2="71.12" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="R80" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="+5VMEM_G" class="1">
+<segment>
+<pinref part="Q14" gate="G$1" pin="C"/>
+<wire x1="78.74" y1="63.5" x2="78.74" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="Q4" gate="G$1" pin="G"/>
+<wire x1="78.74" y1="66.04" x2="81.28" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="66.04" x2="78.74" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="R79" gate="G$1" pin="1"/>
+<junction x="78.74" y="66.04"/>
 </segment>
 </net>
 </nets>

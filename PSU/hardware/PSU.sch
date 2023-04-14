@@ -31035,6 +31035,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100n"/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="D18" library="custom" deviceset="SS*" device="34" value="SS34"/>
 </parts>
 <sheets>
 <sheet>
@@ -32006,6 +32007,10 @@ Replacement power supply unit</text>
 <instance part="GND3" gate="1" x="373.38" y="38.1" smashed="yes">
 <attribute name="VALUE" x="370.84" y="35.56" size="1.778" layer="96"/>
 </instance>
+<instance part="D18" gate="G$1" x="139.7" y="96.52" smashed="yes">
+<attribute name="NAME" x="137.414" y="98.425" size="1.778" layer="95"/>
+<attribute name="VALUE" x="137.414" y="93.091" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -32543,15 +32548,6 @@ Replacement power supply unit</text>
 </net>
 <net name="VIN" class="0">
 <segment>
-<pinref part="C15" gate="G$1" pin="+"/>
-<wire x1="129.54" y1="124.46" x2="129.54" y2="127" width="0.1524" layer="91"/>
-<pinref part="U7" gate="NC1" pin="IN"/>
-<wire x1="139.7" y1="127" x2="147.32" y2="127" width="0.1524" layer="91"/>
-<label x="129.54" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
-<wire x1="139.7" y1="127" x2="129.54" y2="127" width="0.1524" layer="91"/>
-<junction x="139.7" y="127"/>
-</segment>
-<segment>
 <pinref part="D2" gate="G$1" pin="A"/>
 <wire x1="147.32" y1="220.98" x2="144.78" y2="220.98" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="220.98" x2="144.78" y2="228.6" width="0.1524" layer="91"/>
@@ -32570,6 +32566,11 @@ Replacement power supply unit</text>
 <wire x1="83.82" y1="180.34" x2="88.9" y2="180.34" width="0.1524" layer="91"/>
 <label x="88.9" y="180.34" size="1.778" layer="95" xref="yes"/>
 <pinref part="R8" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="D18" gate="G$1" pin="A"/>
+<wire x1="137.16" y1="96.52" x2="134.62" y2="96.52" width="0.1524" layer="91"/>
+<label x="134.62" y="96.52" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="CHG_OUT" class="2">
@@ -33590,6 +33591,22 @@ Replacement power supply unit</text>
 <pinref part="U9" gate="G$1" pin="CE"/>
 <wire x1="360.68" y1="63.5" x2="375.92" y2="63.5" width="0.1524" layer="91"/>
 <label x="360.68" y="63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="VINCHG" class="0">
+<segment>
+<pinref part="C15" gate="G$1" pin="+"/>
+<wire x1="129.54" y1="124.46" x2="129.54" y2="127" width="0.1524" layer="91"/>
+<pinref part="U7" gate="NC1" pin="IN"/>
+<wire x1="139.7" y1="127" x2="147.32" y2="127" width="0.1524" layer="91"/>
+<label x="129.54" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="139.7" y1="127" x2="129.54" y2="127" width="0.1524" layer="91"/>
+<junction x="139.7" y="127"/>
+</segment>
+<segment>
+<pinref part="D18" gate="G$1" pin="C"/>
+<wire x1="142.24" y1="96.52" x2="144.78" y2="96.52" width="0.1524" layer="91"/>
+<label x="144.78" y="96.52" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
